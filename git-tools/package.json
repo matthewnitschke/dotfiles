@@ -6,7 +6,6 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "inquirer": "^6.0.0",
-    "nodegit": "^0.22.1",
     "strip-ansi": "^4.0.0"
   }
 }
