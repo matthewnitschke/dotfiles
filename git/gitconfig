@@ -1,0 +1,3 @@
+[alias]
+    sb = !sh -c \"node ~/scripts/git/tools/switchBranch.js\"
+	delete-branch = !sh -c \"node ~/scripts/git/tools/deleteBranch.js\"
