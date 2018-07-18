@@ -1,7 +1,5 @@
 exports.decorateConfig = (config) => {
-
     config.cursorColor = `${config.cursorColor || '#5C6370'}`;
-
 
     return Object.assign({}, config, {
         showHamburgerMenu: false,
