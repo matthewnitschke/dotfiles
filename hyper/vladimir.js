@@ -9,7 +9,7 @@ exports.decorateConfig = (config) => {
 
         borderColor: '#333',
         backgroundColor: '#1E2127',
-        foregroundColor: '#ECEFF1',
+        foregroundColor: '#abb2bf',
 
         padding: '12px 14px',
 
