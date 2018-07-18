@@ -2,6 +2,7 @@ SCRIPT_DIR=$(dirname "$0") # get the base directory for this file
 
 alias python="python3"
 alias copy="clipcopy"
+alias desk="cd ~/Desktop"
 
 if [[ $OSTYPE == darwin* ]]; then
     source $SCRIPT_DIR/osx.sh
