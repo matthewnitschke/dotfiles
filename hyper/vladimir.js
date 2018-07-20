@@ -4,6 +4,8 @@ exports.decorateConfig = (config) => {
     return Object.assign({}, {
         showHamburgerMenu: false,
         cursorShape: 'BEAM',
+	cursorBlink: true,
+	cursorColor: '#4b5263',
 
         borderColor: '#333',
         backgroundColor: '#1E2127',
@@ -12,8 +14,9 @@ exports.decorateConfig = (config) => {
         padding: '12px 14px',
 
         fontFamily: 'Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
-
         fontSize: 12,
+
+	bell: false,
 
         colors: {
             black: '#1E2127',
@@ -32,9 +35,6 @@ exports.decorateConfig = (config) => {
             lightMagenta: '#C678DD',
             lightCyan: '#56B6C2',
             lightWhite: '#FFFFFF'
-        },
-
-        bell: false,
-        cursorColor: '#4b5263',
+        }
     }, config);
 }
