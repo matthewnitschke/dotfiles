@@ -4,6 +4,8 @@ alias python="python3"
 alias copy="clipcopy"
 alias desk="cd ~/Desktop"
 
+alias checkoff="node ~/scripts/checkoff/checkoff.js"
+
 if [[ $OSTYPE == darwin* ]]; then
     source $SCRIPT_DIR/osx.sh
 else
