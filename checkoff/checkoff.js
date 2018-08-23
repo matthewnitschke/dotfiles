@@ -296,7 +296,7 @@ function draw() {
   })
 
   cleanupButton.on("press", ()=> {
-    require('../cleanup/cleanup.js')
+    require('./cleanup/cleanup.js')
     getData()
   })
 
