@@ -1,7 +1,7 @@
 exports.decorateConfig = (config) => {
     config.cursorColor = `${config.cursorColor || '#5C6370'}`;
 
-    return Object.assign({}, config, {
+    return Object.assign({}, {
         showHamburgerMenu: false,
         cursorShape: 'BEAM',
 
@@ -36,5 +36,5 @@ exports.decorateConfig = (config) => {
 
         bell: false,
         cursorColor: '#4b5263',
-    });
+    }, config);
 }
