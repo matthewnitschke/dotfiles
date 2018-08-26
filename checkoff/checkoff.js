@@ -3,9 +3,9 @@ const moment = require("moment");
 const { exec } = require('child_process');
 
 
-var config = require(`${require('os').homedir()}/.auth-keys.json`).gist.assignments;
+var config = require(`${require('os').homedir()}/.auth-keys.json`).gist;
 var Gist = require("gist.js");
-var gist = Gist(config.gistID).token(config.gistToken);
+var gist = Gist(config.assignments.gistID).token(config.gistToken);
 
 var screen = blessed.screen({
   warnings: true,
@@ -113,7 +113,7 @@ var data = [];
 function getData() {
   gist.get((err, json) => {
     if (!err) {
-      var subjects = JSON.parse(json.files[config.gistFilename].content);
+      var subjects = JSON.parse(json.files[config.assignments.gistFilename].content);
 
       data = subjects;
       draw();
@@ -122,7 +122,7 @@ function getData() {
 }
 
 function saveData() {
-  gist.file(config.gistFilename).write(JSON.stringify(data));
+  gist.file(config.assignments.gistFilename).write(JSON.stringify(data));
 
   gist.save(draw);
 }
@@ -295,7 +295,7 @@ function draw() {
     content: 'Cleanup'
   })
 
-  cleanupButton.on("press", ()=> {
+  cleanupButton.on("press", () => {
     require('./cleanup/cleanup.js')
     getData()
   })
