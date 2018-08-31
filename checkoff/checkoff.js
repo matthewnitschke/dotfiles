@@ -133,6 +133,7 @@ function getData() {
 }
 
 function saveData() {
+  draw()
   request({
     method: 'PATCH',
     url: `https://api.github.com/gists/${config.assignments.gistID}`,
@@ -153,8 +154,6 @@ function saveData() {
     } else if (response && response.statusCode && response.statusCode >= 400) {
       throw new Error(body)
     }
-
-    getData()
   });
 }
 
