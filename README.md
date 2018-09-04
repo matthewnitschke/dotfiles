@@ -29,6 +29,5 @@ add the following in `~/.gitconfig`
 ## hyper
 add the plugin `vladimir` to your plugins array in `~/.hyper.js`
 
-OR
-
-run `make clearHyperConfig` (WARNING! Will overwrite entire `~/.hyper.js` file)
+## iterm2
+set `Vladimir` as default profile in `Preferences -> Profiles -> Other Actions -> Set Default Profile`
