@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "blessed": "^0.1.81",
-    "gist.js": "^0.0.1",
-    "moment": "^2.22.2"
+    "moment": "^2.22.2",
+    "request": "^2.88.0"
   }
 }
