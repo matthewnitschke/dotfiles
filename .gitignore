@@ -1,5 +1,2 @@
 node_modules/
 .DS_Store
-
-# keep dependencies in installation scripts so we dont have to install the installer
-!install/node_modules/
