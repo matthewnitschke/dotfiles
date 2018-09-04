@@ -6,6 +6,8 @@ Configuration managment for my unix based system
 Add whichever of the following you want and then run `make init`
 
 ## zsh
+first install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+
 add the following in `~/.zshrc`
 ```
 source ~/scripts/zsh/zshrc.sh
