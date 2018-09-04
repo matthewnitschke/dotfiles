@@ -35,3 +35,9 @@ add the plugin `vladimir` to your plugins array in `~/.hyper.js`
 
 ## iterm2
 set `Vladimir` as default profile in `Preferences -> Profiles -> Other Actions -> Set Default Profile`
+
+## latex
+figure out where your latex installation is stored and add a symbolink linking any desired class files
+```
+ln -f ./latex/homework.cls path/to/latex/homework.cls
+```
