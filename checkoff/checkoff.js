@@ -113,20 +113,14 @@ var data = []
 function getData() {
   request({
     method: 'GET',
-    url: `https://api.github.com/gists/${config.assignments.gistID}`,
+    url: `https://gist.githubusercontent.com/${config.username}/${config.assignments.gistID}/raw`,
     headers: {
       'User-Agent': 'request',
       'Authorization': `token ${config.gistToken}`
     }
   }, (err, response, body) => {
     if (!err) {
-      body = JSON.parse(body)
-
-      var subjects = JSON.parse(
-        body.files[config.assignments.gistFilename].content
-      )
-
-      data = subjects
+      data = JSON.parse(body)
       draw()
     }
   })
