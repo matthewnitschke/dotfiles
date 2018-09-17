@@ -17,7 +17,7 @@ Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'Valloric/YouCompleteMe'
 
-Plugin 'joshdick/onedark.vim'
+" Plugin 'joshdick/onedark.vim'
 Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()            " required

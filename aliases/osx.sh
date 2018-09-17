@@ -4,3 +4,4 @@ alias sp:math="spotify play uri spotify:user:1242045734:playlist:5iRg1hUvSGW6jP8
 alias sp:rap="spotify play uri spotify:user:1242045734:playlist:17KeQcvfwQWgF8jomrkO7Q"
 alias sp:alt="spotify play uri spotify:user:1242045734:playlist:0UHS0SucJrcymLmqzCzTJd"
 alias sp:tech="spotify play uri spotify:user:1242045734:playlist:2XjuySZCdqT6PnBchVgwd8"
+alias sp:jazz="spotify play uri spotify:user:1242045734:playlist:7N2ToGpwgpx5bGnu8xCvgE"
