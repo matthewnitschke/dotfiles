@@ -6,15 +6,19 @@ Configuration managment for my unix based system
 Add whichever of the following you want and then run `make init`
 
 ## zsh
+first install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+
 add the following in `~/.zshrc`
 ```
-source ~/scripts/zsh/source.sh
+source ~/scripts/zsh/zshrc.sh
 ```
 
 and set your `ZSH_THEME="vladimir"`
 
 ## vim
-add the following in `~/.vimrc`
+first install [vundle](https://github.com/VundleVim/Vundle.vim)
+
+then add the following in `~/.vimrc`
 ```
 source ~/scripts/vim/vimrc.vim
 ```
@@ -29,6 +33,11 @@ add the following in `~/.gitconfig`
 ## hyper
 add the plugin `vladimir` to your plugins array in `~/.hyper.js`
 
-OR
+## iterm2
+set `Vladimir` as default profile in `Preferences -> Profiles -> Other Actions -> Set Default Profile`
 
-run `make clearHyperConfig` (WARNING! Will overwrite entire `~/.hyper.js` file)
+## latex
+figure out where your latex installation is stored and add a symbolink linking any desired class files
+```
+ln -f ./latex/homework.cls path/to/latex/homework.cls
+```

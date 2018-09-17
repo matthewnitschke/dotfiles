@@ -3,6 +3,9 @@ SCRIPT_DIR=$(dirname "$0") # get the base directory for this file
 alias python="python3"
 alias copy="clipcopy"
 alias desk="cd ~/Desktop"
+alias lg='lazygit'
+
+alias checkoff="node ~/scripts/checkoff/checkoff.js"
 
 if [[ $OSTYPE == darwin* ]]; then
     source $SCRIPT_DIR/osx.sh
