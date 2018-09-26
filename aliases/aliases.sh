@@ -5,6 +5,9 @@ alias copy="clipcopy"
 alias desk="cd ~/Desktop"
 alias lg='lazygit'
 
+# cd's to the root of the git repo
+alias gr='cd $(git rev-parse --show-toplevel)'
+
 alias checkoff="node ~/scripts/checkoff/checkoff.js"
 
 if [[ $OSTYPE == darwin* ]]; then
