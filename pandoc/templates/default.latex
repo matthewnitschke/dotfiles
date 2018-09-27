@@ -6,7 +6,7 @@ $endif$$if(dir)$$if(latex-dir-rtl)$
 \PassOptionsToPackage{RTLdocument}{bidi}
 $endif$$endif$%
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(papersize)$$papersize$paper,$endif$$if(beamer)$ignorenonframetext,$if(handout)$handout,$endif$$if(aspectratio)$aspectratio=$aspectratio$,$endif$$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
-\usepackage[a4paper, total={6in, 11in}]{geometry} % margins
+\usepackage[a4paper, total={6in, 9in}]{geometry} % margins
 $if(beamer)$
 $if(background-image)$
 \usebackgroundtemplate{%
