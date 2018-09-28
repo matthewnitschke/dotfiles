@@ -9,18 +9,27 @@ function pdoc(){
     # if there is only one param and its "help", display help
     if [ "$#" == 1 ] && [ "$1" == "help" ]; then
         echo "API"
-        echo "  pdoc [source] [destination]"
-        echo "  pdoc [template] [source] [destination]"
+        echo "  pdoc [source]"
+        echo "  pdoc [template] [source]"
+        echo "  pdoc gen [filename]"
         echo
         echo "Availible Templates:"
         for template in ${TEMPLATES[@]}; do
                 echo "  $template"
         done
-    elif [ "$#" == 2 ]; then
-        pandoc $1 -o $2 --from markdown --data-dir=$SCRIPT_DIR
-    elif [ "$#" == 3 ]; then
-        pandoc $2 -o $3 --from markdown --template $1 --data-dir=$SCRIPT_DIR
     else
-        echo "Invalid input, run 'pdoc help' for api"
+        if [ "$1" == "gen" ] && [ "$#" == 2 ]; then
+            cat $SCRIPT_DIR/scaffold.md > $2
+        
+        elif [ "$#" == 1 ]; then
+            outputName="${1%.*}"
+            pandoc $1 -o $outputName.pdf --from markdown --data-dir=$SCRIPT_DIR
+        
+        elif [ "$#" == 2 ]; then
+            outputName="${2%.*}"
+            pandoc $2 -o $outputName.pdf --from markdown --template $1.latex --data-dir=$SCRIPT_DIR
+        else
+            echo "Invalid input, run 'pdoc help' for api"
+        fi
     fi
 }
