@@ -5,6 +5,7 @@ make the spotify alias better
 
 [ ] vscode preferences sharing
 [ ] auth-keys ~/. and .example.json validation (search keys and validate that they are not out of date)
+[ ] homebrew config (brewfile)
 
 checkoff improvements
     [ ] move to firebase
