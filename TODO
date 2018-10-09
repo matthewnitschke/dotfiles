@@ -1,0 +1,12 @@
+make the spotify alias better
+    [ ] automatic playlist aliases
+    [ ] display availiable aliases
+    [ ] artist play
+
+[ ] vscode preferences sharing
+[ ] auth-keys ~/. and .example.json validation (search keys and validate that they are not out of date)
+
+checkoff improvements
+    [ ] move to firebase
+    [ ] better performace
+    [ ] easier adding of assignments
