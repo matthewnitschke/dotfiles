@@ -1,7 +1,7 @@
 // checks to see if the users auth-keys and the example auth keys are equal
 
 let actualConfig = require(`${require('os').homedir()}/.auth-keys.json`)
-let exampleConfig = require('./auth-keys.example.json')
+let exampleConfig = require('../auth-keys.example.json')
 
 function equalObjectValues(objA, objB) {
     function hasSameKeysAndTypes(a, b){
