@@ -1,5 +1,5 @@
 init:
-	./auth-key-validation/install.sh # installs the auth-key-validation githook
+	# ./auth-key-validation/install.sh # installs the auth-key-validation githook
 
 	./zsh/update-plugins.sh # install zsh plugins
 	(cd git/tools; yarn) # install git tools dependencies
