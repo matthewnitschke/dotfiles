@@ -1,24 +1,54 @@
 let actualConfig = require(`${require('os').homedir()}/.auth-keys.json`)
 let exampleConfig = require('./auth-keys.example.json')
 
-function clearObjectValues(obj) {
-    return Object.keys(obj).reduce((accumulator, key) => {
-        if (typeof obj[key] == 'object'){
-            accumulator[key] = clearObjectValues(obj[key])
-        } else if (typeof obj[key] == 'number') {
-            accumulator[key] = 0
-        } else if (typeof obj[key] == 'string') {
-            accumulator[key] = ""
-        } else if (typeof obj[key] == 'boolean') {
-            accumulator[key] = false
+function equalObjectValues(objA, objB) {
+    function hasSameKeysAndTypes(a, b){
+        let aKeys = Object.keys(a).sort()
+        let bKeys = Object.keys(b).sort()
+    
+        if (aKeys.length != bKeys.length){
+            return false
         }
+    
+        for (let i = 0; i < aKeys.length; i ++){
+            if (!bKeys.includes(aKeys[i])){
+                return false
+            }
+    
+            if (!aKeys.includes(bKeys[i])){
+                return false
+            }
+    
+            if (typeof a[aKeys[i]] != typeof b[bKeys[i]]){
+                return false
+            }
+        }
+    
+        return true
+    }
 
-        return accumulator
-    }, {})
+    if (!hasSameKeysAndTypes(objA, objB)){
+        return false
+    }
+
+    let aObjectKeys = Object.keys(objA).filter(item => typeof objA[item] == 'object').sort()
+    let bObjectKeys = Object.keys(objB).filter(item => typeof objB[item] == 'object').sort()
+
+
+    for (let i = 0; i < aObjectKeys.length; i++) {
+        if (!equalObjectValues(objA[aObjectKeys[i]], objB[bObjectKeys[i]])){
+            return false
+        }
+    }
+
+    return true
 }
 
 
-actualConfig = clearObjectValues(actualConfig)
-exampleConfig = clearObjectValues(exampleConfig)
-
-console.log(JSON.stringify(actualConfig) == JSON.stringify(exampleConfig))
+if (equalObjectValues(actualConfig, exampleConfig)) {
+    console.log('auth-keys.example.json and ~/.auth-keys.json have equal templates')
+    process.exit(0)
+} else {
+    console.error('WARNING: auth-keys.example.json and ~/.auth-keys.json DO NOT have equal templates')
+    process.exit(1)
+}

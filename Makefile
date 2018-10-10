@@ -8,3 +8,6 @@ init:
 	./hyper/install.sh # handle hyper installation
 	./iterm2/install.sh # handle iterm2 installation
 	./pandoc/install.sh # install all required pandoc stuff
+
+validateAuthKeys:
+	node validate-auth-keys.js
