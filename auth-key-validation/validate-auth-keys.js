@@ -1,3 +1,5 @@
+// checks to see if the users auth-keys and the example auth keys are equal
+
 let actualConfig = require(`${require('os').homedir()}/.auth-keys.json`)
 let exampleConfig = require('./auth-keys.example.json')
 
@@ -49,6 +51,6 @@ if (equalObjectValues(actualConfig, exampleConfig)) {
     console.log('auth-keys.example.json and ~/.auth-keys.json have equal templates')
     process.exit(0)
 } else {
-    console.error('WARNING: auth-keys.example.json and ~/.auth-keys.json DO NOT have equal templates')
+    console.error('WARNING: auth-keys.example.json and ~/.auth-keys.json DO NOT have equal templates. Run: "code -d ./auth-keys.example.json ~/.auth-keys.json" to see differences')
     process.exit(1)
 }

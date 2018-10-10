@@ -1,5 +1,6 @@
 init:
-	#git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	./auth-key-validation/install.sh
+
 	./zsh/update-plugins.sh # install zsh plugins
 	(cd git/tools; yarn) # install git tools dependencies
 	(cd checkoff; yarn) # install checkoff dependencies
@@ -7,7 +8,8 @@ init:
 
 	./hyper/install.sh # handle hyper installation
 	./iterm2/install.sh # handle iterm2 installation
-	./pandoc/install.sh # install all required pandoc stuff
 
+
+# run from pre-push githook
 validateAuthKeys:
-	node validate-auth-keys.js
+	node ./auth-key-validation/validate-auth-keys.js
