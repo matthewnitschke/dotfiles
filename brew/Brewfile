@@ -1,0 +1,21 @@
+# Taps
+tap "homebrew/core"
+tap "homebrew/bundle"
+tap "homebrew/services"
+tap "caskroom/cask"
+
+# Binaries
+brew "git"
+brew "curl"
+brew "wget"
+brew "node"
+brew "go"
+brew "micro"
+brew "yarn"
+brew "tree"
+
+# Apps
+cask "iterm2"
+cask "google-chrome"
+cask "spotify"
+cask "visual-studio-code"
