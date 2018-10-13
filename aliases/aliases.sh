@@ -10,6 +10,9 @@ alias gr='cd $(git rev-parse --show-toplevel)'
 
 alias checkoff="node ~/scripts/checkoff/checkoff.js"
 
+alias gh="cd ~/Programming/GitHub"
+alias gl="cd ~/Programming/GitLab"
+
 if [[ $OSTYPE == darwin* ]]; then
     source $SCRIPT_DIR/osx.sh
 else
