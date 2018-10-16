@@ -4,10 +4,9 @@ make the spotify alias better
     [ ] artist play
 
 [ ] vscode preferences sharing
-[ ] auth-keys ~/. and .example.json validation (search keys and validate that they are not out of date)
 [ ] homebrew config (brewfile)
 
 checkoff improvements
-    [ ] move to firebase
-    [ ] better performace
-    [ ] easier adding of assignments
+    [x] move to firebase
+    [x] better performace
+    [x] easier adding of assignments
