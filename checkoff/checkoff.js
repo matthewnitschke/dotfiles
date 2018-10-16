@@ -85,13 +85,13 @@ function generateAssignments(subjectBox, subject) {
         checkbox.on('check', () => {
             db.updateAssignment(subject.id, assignment, {
                 complete: true
-            })
+            }).then(update)
         })
 
         checkbox.on('uncheck', () => {
             db.updateAssignment(subject.id, assignment, {
                 complete: false
-            })
+            }).then(update)
         })
 
         var deleteButton = blessed.button({
