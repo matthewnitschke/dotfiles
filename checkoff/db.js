@@ -4,7 +4,7 @@ const { FieldValue, Timestamp } = Firestore
 
 const db = new Firestore({
     projectId: 'dash-dc359',
-    keyFilename: `${require('os').homedir()}/.auths/dash-firebase-service-account-key.json`,
+    keyFilename: `${require('os').homedir()}/.dash-firebase-service-account-key.json`,
     timestampsInSnapshots: true
 })
 
