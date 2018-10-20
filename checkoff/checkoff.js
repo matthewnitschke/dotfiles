@@ -219,10 +219,10 @@ function draw() {
     contentBox = blessed.layout({
         parent: screen,
         top: 0,
-        left: 1,
+        left: 0,
         tags: true,
         padding: {
-            top: 1
+            top: 0
         },
         style: {
             focus: {
@@ -241,7 +241,7 @@ function draw() {
                 subject.color
                 }-fg}`,
             width: '100%',
-            height: '20%-1',
+            height: `${100/data.length}%-1`,
             tags: true,
             padding: {
                 top: 0,

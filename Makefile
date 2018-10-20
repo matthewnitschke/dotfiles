@@ -6,3 +6,6 @@ init:
 
 	./hyper/install.sh # handle hyper installation
 	./iterm2/install.sh # handle iterm2 installation
+
+	(cd brew; brew bundle)
+	./vscode/install.sh
