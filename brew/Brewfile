@@ -13,6 +13,7 @@ brew "go"
 brew "micro"
 brew "yarn"
 brew "tree"
+brew "jq" # json parser for parsing json in the cli
 
 # Apps
 cask "iterm2"
