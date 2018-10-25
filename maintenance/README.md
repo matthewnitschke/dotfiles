@@ -1,0 +1,1 @@
+the idea of maintenace is to have a script that preforms general stuff that cleanus up my computers
