@@ -8,4 +8,3 @@ init:
 	./terminator/install.sh # setup the config link for terminator
 
 	(cd brew; brew bundle)
-	./vscode/install.sh
