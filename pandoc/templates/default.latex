@@ -195,6 +195,11 @@
   \let\Oldincludegraphics\includegraphics
   \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=\maxwidth]{#1}}
   $endif$
+
+  $if(spacing)$
+  \linespread{$spacing$}
+  $endif$
+
   
   
   % Wait, didn't we already discuss the crisis of code in footnotes?  
