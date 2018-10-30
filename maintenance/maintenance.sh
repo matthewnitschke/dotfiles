@@ -2,9 +2,12 @@
 
 # if homebrew is installed, run its cleanup commands
 if [ -x "$(command -v brew)" ]; then
-    brew update # updates brew itself stuff
-    brew upgrade # updates brew formulas
-    brew cleanup # removes any uneeded brew stuff
+    # the following commands were messing up required older versions of tools on my work computer
+    # find some solution to this...
+
+    # brew update # updates brew itself stuff
+    # brew upgrade # updates brew formulas
+    # brew cleanup # removes any uneeded brew stuff
 fi
 
 # if apt-get is installed, run its cleanup commands
