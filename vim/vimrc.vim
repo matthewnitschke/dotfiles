@@ -6,6 +6,7 @@ set mouse=a   " enable mouse
 set autoindent
 set number
 set encoding=utf-8
+set sel=inclusive
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
