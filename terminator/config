@@ -1,6 +1,6 @@
 [global_config]
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
-  geometry_hinting = False
+  handle_size = 2
 [keybindings]
   cycle_next = <Primary>bracketright
   cycle_prev = <Primary>bracketleft
@@ -13,6 +13,7 @@
   [[default]]
     [[[child1]]]
       parent = window0
+      profile = default
       type = Terminal
     [[[window0]]]
       parent = ""
