@@ -30,14 +30,6 @@ add the following in `~/.gitconfig`
 	path = scripts/git/gitconfig
 ```
 
-## hyper
-add the plugin `vladimir` to your plugins array in `~/.hyper.js`
-
 ## iterm2
 set `Vladimir` as default profile in `Preferences -> Profiles -> Other Actions -> Set Default Profile`
 
-## pandoc
-its installed with the `zsh` configuration, run the following for help
-```
-pdoc help
-```
