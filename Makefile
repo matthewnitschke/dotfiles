@@ -1,3 +1,5 @@
+.DEFAULT_GOAL := init
+
 init:
 	./brew/install.sh # first install brew dependencies
 
