@@ -14,6 +14,7 @@ brew "micro"
 brew "yarn"
 brew "tree"
 brew "jq" # json parser for parsing json in the cli
+brew "git-open"
 
 # Apps
 cask "iterm2"
