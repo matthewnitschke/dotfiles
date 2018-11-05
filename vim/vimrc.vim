@@ -16,7 +16,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
+" Plugin 'SpaceVim/SpaceVim' 
+
 
 " Plugin 'joshdick/onedark.vim'
 Plugin 'jiangmiao/auto-pairs'

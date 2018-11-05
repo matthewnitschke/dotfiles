@@ -3,8 +3,8 @@
 init:
 	./brew/install.sh # first install brew dependencies
 
-	./zsh/update-plugins.sh # install zsh plugins
-	(cd ~; vim -c 'PluginInstall' -c 'qa!') # install vim plugins
+	./zsh/update-plugins.sh # install zsh plugins1
+	./vim/install.sh
 
 	./iterm2/install.sh # handle iterm2 installation
 	./terminator/install.sh # setup the config link for terminator
