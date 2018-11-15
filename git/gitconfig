@@ -3,3 +3,4 @@
 	delete-branch = !sh -c \"node ~/scripts/git/tools/deleteBranch.js\"
     s = status --short
     poh = push origin HEAD
+    mm = !sh -c \"git pull origin master && git merge master\"
