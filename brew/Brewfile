@@ -16,6 +16,7 @@ brew "tree"
 brew "jq" # json parser for parsing json in the cli
 brew "git-open"
 brew "pandoc"
+brew "plantuml"
 
 # Apps
 cask "mactex"
