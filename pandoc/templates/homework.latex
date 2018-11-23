@@ -71,6 +71,10 @@
     
     \usepackage{geometry}
     \geometry{verbose,letterpaper,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=3cm}
+
+    % for plantuml stuff
+    \usepackage{tikz}
+
     % so if you just keep a copy of this template in the directory you are working in, you
     % can adjust the margins by going into this file and messing with the margins.
     % the syntax is very unforgiving, but permits 3cm and 2.5in and some other things.

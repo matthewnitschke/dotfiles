@@ -15,4 +15,3 @@ fi
 export PATH="$PATH:/Library/TeX/texbin"
 
 source $SCRIPT_DIR/../aliases/aliases.sh
-source $SCRIPT_DIR/../pandoc/pandoc.sh
