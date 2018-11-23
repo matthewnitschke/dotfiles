@@ -16,6 +16,7 @@ alias gh="cd ~/Programming/GitHub"
 alias gl="cd ~/Programming/GitLab"
 
 alias maint="~/scripts/maintenance/maintenance.sh"
+alias pdoc="~/scripts/pandoc/pandoc.sh"
 
 if [[ $OSTYPE == darwin* ]]; then
     source $SCRIPT_DIR/osx.sh
