@@ -43,10 +43,14 @@ while getopts ":wt:" opt; do
 done
 
 outputName="${src_filename%.*}.pdf"
+pdocArgs = "$src_filename -o $outputName --from markdown $template --filter $SCRIPT_DIR/filters/plantuml.py --data-dir=$SCRIPT_DIR"
 
-pandoc $src_filename -o $outputName --from markdown $template --filter $SCRIPT_DIR/filters/plantuml.py --data-dir=$SCRIPT_DIR
+# run the arguments
+pandoc $pdocArgs
 
 if [[ $watch = true ]]; then
     echo "Watching for changes in $src_filename"
-    echo $src_filename | entr echo "Running pdoc" && pandoc $src_filename -o $outputName --from markdown $template --filter $SCRIPT_DIR/filters/plantuml.py --data-dir=$SCRIPT_DIR
+
+    # setup the entr to watch for changes, and rerun when changes occur
+    echo $src_filename | entr echo "Running pdoc" && pandoc $pdocArgs
 fi
