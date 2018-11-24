@@ -5,7 +5,6 @@ alias sudo='sudo ' # fixes the issue of running aliases with sudo
 alias python="python3"
 alias copy="clipcopy"
 alias desk="cd ~/Desktop"
-alias lg='lazygit'
 
 # cd's to the root of the git repo
 alias gr='cd $(git rev-parse --show-toplevel)'
