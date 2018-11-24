@@ -2,36 +2,51 @@
 
 SCRIPT_DIR=$(dirname "$0") # get the base directory for this file
 
-# read all of the template files from the templates folder and remove their extensions
-TEMPLATES=($(ls -1 $SCRIPT_DIR/templates | sed -e 's/\..*$//' | sort))
-
 # if there is only one param and its "help", display help
-if [[ "$#" = 1 ]] && [[ "$1" = "help" ]]; then
+if [[ "$#" = 1 ]] && [[ "$1" == "-h" ]]; then
+    # read all of the template files from the templates folder and remove their extensions
+    TEMPLATES=($(ls -1 $SCRIPT_DIR/templates | sed -e 's/\..*$//' | sort))
+
     echo "API"
     echo "  pdoc [source]"
-    echo "  pdoc [template] [source]"
+    echo "  pdoc [source] [-t template name] [-w watch]"
     echo "  pdoc gen [filename]"
     echo
     echo "Availible Templates:"
     for template in ${TEMPLATES[@]}; do
         echo "  $template"
     done
-else
-    if [[ "$1" = "gen" ]] && [[ "$#" = 2 ]]; then
-        cat $SCRIPT_DIR/scaffold.md > $2
-    
-    elif [[ "$#" = 1 ]]; then
-        outputName="${1%.*}"
-        pandoc $1 -o $outputName.pdf --from markdown --filter $SCRIPT_DIR/filters/plantuml.py --data-dir=$SCRIPT_DIR
-    
-    elif [[ "$#" = 2 ]]; then
-        outputName="${2%.*}"
-        pandoc $2 -o $outputName.pdf --from markdown --template $1.latex --filter $SCRIPT_DIR/filters/plantuml.py --data-dir=$SCRIPT_DIR
-    else
-        echo "Invalid input, run 'pdoc help' for api"
-    fi
+    exit 0
+fi
 
-    if [[ -d "plantuml-images" ]]; then
-        rm -r plantuml-images
-    fi
+# if running with the gen command, run the generation and exit
+if [[ "$#" = 2 ]] && [[ "$1" = "gen" ]]; then
+    cat $SCRIPT_DIR/scaffold.md > $2
+    exit 0
+fi
+
+
+src_filename="$1"
+shift
+
+template=""
+watch="false"
+while getopts ":wt:" opt; do
+  case ${opt} in
+    t)
+        template="--template $OPTARG.latex"
+        ;;
+    w)
+        watch=true
+        ;;
+  esac
+done
+
+outputName="${src_filename%.*}.pdf"
+
+pandoc $src_filename -o $outputName --from markdown $template --filter $SCRIPT_DIR/filters/plantuml.py --data-dir=$SCRIPT_DIR
+
+if [[ $watch = true ]]; then
+    echo "Watching for changes in $src_filename"
+    echo $src_filename | entr pandoc $src_filename -o $outputName --from markdown $template --filter $SCRIPT_DIR/filters/plantuml.py --data-dir=$SCRIPT_DIR
 fi

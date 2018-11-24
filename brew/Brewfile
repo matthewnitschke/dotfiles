@@ -15,8 +15,12 @@ brew "yarn"
 brew "tree"
 brew "jq" # json parser for parsing json in the cli
 brew "git-open"
+
+# Pandoc stuff
 brew "pandoc"
-brew "plantuml"
+brew "plantuml" # for uml diagrams in pandoc
+bew "entr" # for pdoc file changed watching and rebuilding
+
 
 # Apps
 cask "mactex"
