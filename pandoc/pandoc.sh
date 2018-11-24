@@ -48,5 +48,5 @@ pandoc $src_filename -o $outputName --from markdown $template --filter $SCRIPT_D
 
 if [[ $watch = true ]]; then
     echo "Watching for changes in $src_filename"
-    echo $src_filename | entr pandoc $src_filename -o $outputName --from markdown $template --filter $SCRIPT_DIR/filters/plantuml.py --data-dir=$SCRIPT_DIR
+    echo $src_filename | entr echo "Running pdoc" && pandoc $src_filename -o $outputName --from markdown $template --filter $SCRIPT_DIR/filters/plantuml.py --data-dir=$SCRIPT_DIR
 fi
