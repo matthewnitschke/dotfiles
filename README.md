@@ -1,6 +1,6 @@
 # Scripts
 
-Configuration managment for my unix based system
+Configuration management for my unix based system
 
 # Installation
 Add whichever of the following you want and then run `make init`
