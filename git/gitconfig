@@ -1,6 +1,17 @@
 [alias]
+    # short aliases
+    b = branch
+    s = status --short
+
+    # tools
     sb = !sh -c \"node ~/scripts/git/tools/switchBranch.js\"
 	delete-branch = !sh -c \"node ~/scripts/git/tools/deleteBranch.js\"
-    s = status --short
+    
+    # common processes
     poh = push origin HEAD
-    mm = !sh -c \"git pull origin master && git merge master\"
+    mm = !sh -c \"git pull origin master && git merge master\" # merges the master branch
+
+# I dont like the pager when displaying branches, if you have that many branches it should be time to rethink your
+# development processes. Also, if you want a pager just do "git branch | less", its that easy
+[pager]
+   branch = false
