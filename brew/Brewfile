@@ -14,13 +14,7 @@ brew "go"
 brew "yarn"
 brew "git-open"
 
-# Pandoc stuff
-brew "pandoc"
-brew "plantuml" # for uml diagrams in pandoc
-bew "entr" # for pdoc file changed watching and rebuilding
-
 # Apps
-cask "mactex"
 cask "iterm2"
 cask "google-chrome"
 cask "spotify"

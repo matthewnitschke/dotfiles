@@ -2,6 +2,11 @@
 
 SCRIPT_DIR=$(dirname "$0") # get the base directory for this file
 
+if [[ -x "$(command -v pandoc)" ]] && [[ -x "$(command -v pdflatex)" ]]; then
+    echo "Pandoc is not installed. Run '$SCRIPT_DIR/install.sh' to install"
+    exit 0
+fi
+
 # if there is only one param and its "help", display help
 if [[ "$#" = 1 ]] && [[ "$1" == "-h" ]]; then
     # read all of the template files from the templates folder and remove their extensions
@@ -43,7 +48,7 @@ while getopts ":wt:" opt; do
 done
 
 outputName="${src_filename%.*}.pdf"
-pdocArgs = "$src_filename -o $outputName --from markdown $template --filter $SCRIPT_DIR/filters/plantuml.py --data-dir=$SCRIPT_DIR"
+pdocArgs="$src_filename -o $outputName --from markdown $template --filter $SCRIPT_DIR/filters/plantuml.py --data-dir=$SCRIPT_DIR"
 
 # run the arguments
 pandoc $pdocArgs
