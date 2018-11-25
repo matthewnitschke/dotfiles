@@ -39,3 +39,10 @@ add the following in `~/.gitconfig`
 ## iterm2
 set `Vladimir` as default profile in `Preferences -> Profiles -> Other Actions -> Set Default Profile`
 
+## pandoc
+pandoc has its own installation, to use run:
+```
+~/scripts/pandoc/install.sh
+```
+this will run some brew installations, then refer to `pdoc -h` for documentation on how to use
+
