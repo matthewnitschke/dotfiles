@@ -6,18 +6,24 @@ Configuration management for my unix based system
 Add whichever of the following you want and then run `make init`
 
 ## zsh
-first install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-
 add the following in `~/.zshrc`
 ```
 source ~/scripts/zsh/zshrc.sh
 ```
+### zsh configuration
+you can pick and choose which of the following to use
+```shell
+# sets the zsh theme to the custom one contained in this repo
+ZSH_THEME="vladimir"
 
-and set your `ZSH_THEME="vladimir"`
+# include the shared aliases, [Note: Must be after 'source $ZSH/oh-my-zsh.sh' to work]
+source ~/scripts/aliases/aliases.sh
+
+# lazyload in node/nvm to speed up terminal boot times
+source ~/scripts/zsh/lazyload-node.sh
+```
 
 ## vim
-first install [vundle](https://github.com/VundleVim/Vundle.vim)
-
 then add the following in `~/.vimrc`
 ```
 source ~/scripts/vim/vimrc.vim
