@@ -6,6 +6,7 @@ tap "caskroom/cask"
 
 # Binaries
 brew "git"
+brew "zsh"
 brew "curl"
 brew "wget"
 brew "node"

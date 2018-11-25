@@ -1,5 +1,9 @@
 SCRIPT_DIR=$(dirname "$0") # get the base directory for this file
 
+# install oh-my-zsh with sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# install oh-my-zsh plugins
 rm -rf $SCRIPT_DIR/plugins/zsh-autosuggestions
 rm -rf $SCRIPT_DIR/plugins/zsh-syntax-highlighting
 rm -rf $SCRIPT_DIR/plugins/git-open

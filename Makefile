@@ -3,7 +3,7 @@
 init:
 	./brew/install.sh # first install brew dependencies
 
-	./zsh/update-plugins.sh # install zsh plugins1
+	./zsh/install.sh # install zsh plugins1
 	./vim/install.sh
 
 	./iterm2/install.sh # handle iterm2 installation
