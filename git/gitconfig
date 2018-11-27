@@ -2,6 +2,7 @@
     # short aliases
     b = branch
     s = status --short
+    m = checkout master
 
     # tools
     sb = !sh -c \"node ~/scripts/git/tools/switchBranch.js\"

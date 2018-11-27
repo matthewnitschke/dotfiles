@@ -1,3 +1,5 @@
+# NOTE: ONLY INSTALL DEPENDENCIES, you can add applications through cask as you need them
+
 # Taps
 tap "homebrew/core"
 tap "homebrew/bundle"
@@ -7,15 +9,5 @@ tap "caskroom/cask"
 # Binaries
 brew "git"
 brew "zsh"
-brew "curl"
-brew "wget"
 brew "node"
-brew "go"
 brew "yarn"
-brew "git-open"
-
-# Apps
-cask "iterm2"
-cask "google-chrome"
-cask "spotify"
-cask "visual-studio-code"
