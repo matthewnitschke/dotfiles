@@ -7,6 +7,7 @@ set autoindent
 set number
 set encoding=utf-8
 set virtualedit=onemore " allow selection in normal mode after first character
+set tabstop=4
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
