@@ -2,7 +2,6 @@ SCRIPT_DIR=$(dirname "$0") # get the base directory for this file
 
 alias sudo='sudo ' # fixes the issue of running aliases with sudo
 
-alias python="python3"
 alias copy="clipcopy"
 alias desk="cd ~/Desktop"
 
