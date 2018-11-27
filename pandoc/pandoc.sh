@@ -2,7 +2,7 @@
 
 SCRIPT_DIR=$(dirname "$0") # get the base directory for this file
 
-if [[ -x "$(command -v pandoc)" ]] && [[ -x "$(command -v pdflatex)" ]]; then
+if [[ ! -x "$(command -v pandoc)" ]] || [[ ! -x "$(command -v pdflatex)" ]]; then
     echo "Pandoc is not installed. Run '$SCRIPT_DIR/install.sh' to install"
     exit 0
 fi
@@ -57,5 +57,6 @@ if [[ $watch = true ]]; then
     echo "Watching for changes in $src_filename"
 
     # setup the entr to watch for changes, and rerun when changes occur
-    echo $src_filename | entr echo "Running pdoc" && pandoc $pdocArgs
+    # echos "Running pdoc" on each call, also filters out text "zsh returned exit code 0"
+    echo $src_filename | entr -s "echo \"Running pdoc\" && pandoc $pdocArgs" | grep -v "zsh returned exit code 0"
 fi
