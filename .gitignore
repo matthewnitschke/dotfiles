@@ -1,4 +1,4 @@
 node_modules/
 .DS_Store
 
-zsh/plugins/*
+zsh/plugins/**
