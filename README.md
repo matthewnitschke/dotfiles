@@ -42,7 +42,7 @@ set `Vladimir` as default profile in `Preferences -> Profiles -> Other Actions -
 ## pandoc
 pandoc has its own installation, to use run:
 ```
-~/scripts/pandoc/install.sh
+make init-pandoc
 ```
 this will run some brew installations, then refer to `pdoc -h` for documentation on how to use
 

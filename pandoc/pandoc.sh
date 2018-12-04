@@ -3,7 +3,7 @@
 SCRIPT_DIR=$(dirname "$0") # get the base directory for this file
 
 if [[ ! -x "$(command -v pandoc)" ]] || [[ ! -x "$(command -v pdflatex)" ]]; then
-    echo "Pandoc is not installed. Run '$SCRIPT_DIR/install.sh' to install"
+    echo "Pandoc is not installed. Run 'make init-pandoc' from the ~/scripts directory to install"
     exit 0
 fi
 

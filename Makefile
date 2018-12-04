@@ -13,3 +13,6 @@ init:
 	# install node dependencies
 	(cd git/tools; npm install) # install git tools dependencies
 	(cd custom-apps/checkoff; npm install) # install checkoff dependencies
+
+init-pandoc:
+	./pandoc/install.sh

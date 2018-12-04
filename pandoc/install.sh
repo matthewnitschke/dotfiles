@@ -7,7 +7,7 @@ if [[ ! -x "$(command -v brew)" ]]; then
     brew cask install "mactex"
     brew install "plantuml" # for uml diagrams in pandoc
     brew install "entr" # for pdoc file changed watching and rebuilding
-else
+elif [[ ! -x "$(command -v pacman)" ]]; then
     echo "Pandoc installation currently only supported for systems with homebrew installed"
     exit 1
 fi
