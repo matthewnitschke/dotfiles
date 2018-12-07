@@ -1,11 +1,7 @@
 const blessed = require('blessed')
 const moment = require('moment')
-const request = require('request')
-const { exec } = require('child_process')
 
 const db = require('./db.js')
-
-var config = require(`${require('os').homedir()}/.auth-keys.json`).gist
 
 var screen = blessed.screen({
     warnings: true,
@@ -114,31 +110,6 @@ var data = []
 async function update() {
     data = await db.getAssignments()
     draw()
-}
-
-function saveData() {
-    draw()
-    request({
-        method: 'PATCH',
-        url: `https://api.github.com/gists/${config.assignments.gistID}`,
-        headers: {
-            'User-Agent': 'request',
-            'Authorization': `token ${config.gistToken}`
-        },
-        body: JSON.stringify({
-            files: {
-                [config.assignments.gistFilename]: {
-                    "content": JSON.stringify(data)
-                }
-            }
-        })
-    }, (error, response, body) => {
-        if (error) {
-            throw new Error(error)
-        } else if (response && response.statusCode && response.statusCode >= 400) {
-            throw new Error(body)
-        }
-    });
 }
 
 function addItemPrompt(subjectId) {
