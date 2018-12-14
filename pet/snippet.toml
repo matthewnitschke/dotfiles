@@ -1,0 +1,9 @@
+[[snippets]]
+  description = "Kill all applications using port 8080"
+  command = "kill $(lsof -t -i:8080)"
+  output = ""
+
+[[snippets]]
+  description = "Kill all applications using port 9100"
+  command = "kill $(lsof -t -i:9100)"
+  output = ""
