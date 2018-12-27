@@ -8,3 +8,13 @@ this document holds tools that I find helpful. Used kind of like an archive
 | `peco`     | interactive filtering                  | [link](https://github.com/peco/peco)             |
 | `git-open` | git alias for open repo in web browser | [link](https://github.com/paulirish/git-open)    |
 | `lazygit`  | tui for git                            | [link](https://github.com/jesseduffield/lazygit) |
+
+## VSCode Extensions
+VS code specific extensions I use
+
+| Name | Description |
+| `Path Intellisense` | autocompletes filenames |
+| `Dracula Official` | the theme I like and use |
+| `Atom One Dark` | the alternate theme I like and use |
+| `Useful React Snippets` | some helpful react snippets |
+
