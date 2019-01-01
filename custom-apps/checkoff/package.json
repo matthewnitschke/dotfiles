@@ -6,7 +6,6 @@
   "dependencies": {
     "@google-cloud/firestore": "^0.17.0",
     "blessed": "^0.1.81",
-    "moment": "^2.22.2",
-    "request": "^2.88.0"
+    "moment": "^2.22.2"
   }
 }
