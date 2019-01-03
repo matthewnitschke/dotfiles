@@ -9,6 +9,7 @@ this document holds tools that I find helpful. Used kind of like an archive
 | `git-open` | git alias for open repo in web browser | [link](https://github.com/paulirish/git-open)    |
 | `lazygit`  | tui for git                            | [link](https://github.com/jesseduffield/lazygit) |
 | Robo 3T | gui for mongodb server | [link](https://robomongo.org/) |
+| Pretzel | taskbar tool for hotkeys | [link](https://www.amie-chen.com/pretzel/)
 
 ## VSCode Extensions
 VS code specific extensions I use
