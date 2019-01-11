@@ -15,6 +15,7 @@ this document holds tools that I find helpful. Used kind of like an archive
 VS code specific extensions I use
 
 | Name | Description |
+|------|-------------|
 | `Path Intellisense` | autocompletes filenames |
 | `Dracula Official` | the theme I like and use |
 | `Atom One Dark` | the alternate theme I like and use |
