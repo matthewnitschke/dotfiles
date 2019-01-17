@@ -10,6 +10,7 @@ this document holds tools that I find helpful. Used kind of like an archive
 | `git-open` | git alias for open repo in web browser                | [link](https://github.com/paulirish/git-open)    |
 | `lazygit`  | tui for git                                           | [link](https://github.com/jesseduffield/lazygit) |
 | `bat`      | replacement for `cat` that offers syntax highlighting | [link](https://github.com/sharkdp/bat)           |
+| `fzf`      | good fuzzy finder (make sure to install keybindings `$(brew --prefix)/opt/fzf/install`) | [link](https://github.com/junegunn/fzf) |
 
 ## GUI tools
 | Name       | Description                                           | Link                                             |
