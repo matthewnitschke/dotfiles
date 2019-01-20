@@ -1,115 +1,28 @@
 
 %!TEX TS-program = xelatex
-\documentclass[11pt]{article}  
 
-  % This ^^^ is a standard LaTeX document class declaration
-  % (the previous line is a pseudo-comment, declaring that we will
-  % use the special XeTeX machinery for its more extensive font list
-  % and its use of unicode.)
-  % If you made this line more akin to the one in the default 
-  % latex.template file, say:
-  % \documentclass$if(fontsize)$[$fontsize$]$endif${scrartcl}
-  % then you would have a 'variable', fontsize, and could write things
-  % like `markdown2pdf my.txt --xetex --variable=fontsize:12pt -o my.pdf` or
-  % `markdown2pdf my.txt --xetex --variable=fontsize:24pt`. I have a couple
-  % of basic templates I call with `--template=whatever.template` and 
-  % adjust things like font size as I please. 
-  
-  % Here's an alternative command for two column landscape 
-  % uncomment this and comment the above and you will have ...
-  % 2 columns landscape, not bad for some purposes. (If you strike
-  % the word 'landscape' you will have two narrow newspaperlike
-  % columns; scientists like that, because irrationality must
-  % show itself somewhere):
-  
-  %\documentclass[12pt,twocolumn,landscape]{scrartcl} 
-  %\setlength{\columnsep}{.5in}
-  
-  % ^^^ columns are too close together in LaTeX so we add this 
-  % `columnsep` command.
-  
-  
-  % I use the special 'komascript' article class "scrartcl" 
-  % reasons I can't entirely remember; I'm not sure it's that great.
-  % One reason is the unimportant one that, like many classes,
-  % it allows very big fonts which are convenient for booklet printing 
-  % in the idiotic American way by shrinking letterpaper pages, 
-  % which is what I usually do.  
-  % 12pt, specified above is a rational font size of course.
-  
-  % the standard LaTeX 'article' class declaration would be something like:
-  % \documentclass[12pt]{article} 
-  % or for big type:
-  % \documentclass[24pt]{extarticle}
-  % but these restrict you to old-fashioned LaTeX materials.
-  % note that Kieran Healy uses the swank 'memoir' class, which might be
-  % worth a look. 
-  
-  
-  % This template needs to be called with the `--xetex` flag. 
-  % -- We are in swanky unicode, XeTeX land, and must now import these packages:
-  % \usepackage{fontspec,xltxtra,xunicode}
-  
-  
-  
-  % pandoc imports the extensive `amsmath` collection of symbols 
-  % for typesetting ordinary math.  
-  \usepackage{amsmath}
-  % if you use exotic symbols you need to import specific packages, eg. for
-  % electrical engineering diagrams, musical notation, the unspeakable rites
-  % of freemasonry etc.
-  
+
+$if(fontsize)$
+  \documentclass[$fontsize$]{article}  
+$else$
+  \documentclass[11pt]{article}  
+$endif$
+
+  \usepackage{amsmath}  
   \usepackage{tikz}
-  
-  
-  % The `babel` package, among other things, lets you determine what 
-  % language you are using in a given stretch of text, so that typesetting 
-  % will go well. Here we specify that mostly, we are speaking English:
   \usepackage[english]{babel}
-
-  
-  
-  % the `geometry` package makes for convenient adjusting of margins, which is what
-  % you asked about.  Of course it can do much more, even make coffee for you. 
-  
   \usepackage{geometry}
   \geometry{verbose,letterpaper,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=3cm}
-  % so if you just keep a copy of this template in the directory you are working in, you
-  % can adjust the margins by going into this file and messing with the margins.
-  % the syntax is very unforgiving, but permits 3cm and 2.5in and some other things.
-  
-  
-  % I'm puzzled why I have this foonote speciality, 
-  % I wonder if it's part of my problem I've been having, but wont look
-  % into it now. 
   \usepackage[flushmargin]{footmisc} 
-  % \usepackage[hang,flushmargin]{footmisc}
+
   
   
-  
-  % everything that follows is copied from the pandoc default template:
-  % I will interpolate a few comments. 
-  
-  
-  % pandoc prefers unindented paragraphs in the European style:
   \setlength{\parindent}{0pt}
-  %  ... with paragraph breaks marked by a slight lengthening of 
-  % the space between paragraphs:
+
   \setlength{\parskip}{6pt plus 2pt minus 1pt}
   
   \pagestyle{plain}  
-  % this just numbers the pages.  
-  % \pagestyle{empty} 
-  % would give you no numbering
-  % after one-million man-years of macro-composition, 
-  % there are also fancy pagestyles with much wilder options 
-  % for headers and footers, of course.
   
-  % if you have code in your footnotes, the million macro march 
-  % kind of bumps into itself.
-  % Pandoc, having just rendered your text into LaTeX, 
-  % knows whether the 'variable' `verbatim-in-note` is True, and 
-  % If it is, it asks for a  LaTeX package that solves the dilemma:
   $if(verbatim-in-note)$
   \usepackage{fancyvrb}
   $endif$
@@ -126,47 +39,18 @@
   \usepackage{enumerate}
   $endif$
   
-  
-  % What if you make a table? -- pandoc knows, of course, and 
-  % then declares that its  variable `table` is True and 
-  % imports a table package suitable to its pleasantly simple tables. 
-  % Needless to say infinitely   complicated tables are possible in 
-  % LaTeX with suitable packages. We are spared the temptation:
-  
   $if(tables)$
   % \usepackage{array}
   \usepackage{longtable,booktabs}
   
-  % Continuing on the topic of tables ... (we havent reached `endif`). 
-  % The commented out line below is in the default pandoc  latex.template.
-  % Some unpleasantness with table formatting must be corrected.
-  
-  % This is needed because raggedright in table elements redefines \\:
   \newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
   \let\PBS=\PreserveBackslash
   
   $endif$
   
-  
-  % New topic: What if you use subscripts? 
-  % Pandoc remembers whether you did, assigning True to $subscript$ 
-  % It then needs to adopt a default with an incantation like this:
   $if(subscript)$
   \newcommand{\textsubscr}[1]{\ensuremath{_{\scriptsize\textrm{#1}}}}
   $endif$
-  
-  
-  
-  % markdown inclines us to use links, since our texts can be made into html. 
-  % Why not have clickable blue links even in 
-  % learned, scientific, religious, juridical, poetical and other suchlike texts? 
-  % Never mind that they have been proven to destroy the nervous system!
-  
-  % First, what about the fact that links like http://example.com are 
-  % technically code and thus must not be broken across lines? 
-  % [breaklinks=true] to the rescue!
-  
-  % Nowadays LaTeX can handle all of this with another half million macros:
   
   \usepackage[breaklinks=true]{hyperref}
   \hypersetup{colorlinks,%
@@ -178,19 +62,9 @@
   \usepackage{url}
   $endif$
   
-  
-  
-  % Images. In ye olde LaTeX one could only import a limited range of image
-  % types, e.g. the forgotten .eps files.  Or else one simply drew the image with suitable
-  % commands and drawing packages.  Today we want to import .jpg files we make with 
-  % our smart phones or whatever:
-  
   $if(graphics)$
   \usepackage{graphicx}
-  % Comment from the pandoc default template:
-  % We will generate all images so they have a width \maxwidth. This means
-  % that they will get their normal width if they fit onto the page, but
-  % are scaled down if they would overflow the margins.
+ 
   \makeatletter
   \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
   \else\Gin@nat@width\fi}
@@ -204,28 +78,15 @@
   $endif$
 
   
-  
-  % Wait, didn't we already discuss the crisis of code in footnotes?  
-  % Evidently the order of unfolding of macros required that
-  % we import a package to deal with them earlier
-  % and issue a command it defines now. (Or maybe that's not the reason;
-  % very often the order does matter as the insane system of macro expansion
-  % must take place by stages.)
   $if(verbatim-in-note)$
   \VerbatimFootnotes % allows verbatim text in footnotes
   $endif$
   
-  
-  % you can include stuff for the header from a file specified on the command line;
-  % I've never done this, but that stuff will go here:
+
   $for(header-includes)$
   $header-includes$
   $endfor$
   
-  
-  % If you specified title authors and date at the start of 
-  % your pandoc-markdown file, pandoc knows the 'values' of the
-  % variables: title authors date and fills them in.
   
   $if(title)$
   \title{$title$}
@@ -234,20 +95,6 @@
   $if(date)$
   \date{$date$}
   $endif$
-  
-  % After filling in all these blanks above, or erasing them 
-  % where they are not needed pandoc has finished writing the 
-  % famous LaTeX *preamble* for your document.
-  % Now comes the all important command \begin{document}
-  % which will be paired with an \end{document} at the end.
-  % Pandoc knows whether you have a title, and has already
-  % specified what it is; if so, it demands that the title be rendered.  
-  % Pandoc knows whether you want a table of contents, you
-  % specify this on the command line.
-  % Then, after fiddling with alignments, there comes the real
-  % business: pandoc slaps its rendering of your text in the place of
-  % the variable `body`
-  % It then concludes the document it has been writing. 
 
   \setlength\parindent{0pt}
   
