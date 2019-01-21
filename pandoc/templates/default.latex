@@ -15,11 +15,11 @@ $endif$
   \geometry{verbose,letterpaper,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=3cm}
   \usepackage[flushmargin]{footmisc} 
 
+  \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
   
-  
-  \setlength{\parindent}{0pt}
+  \setlength{\parindent}{15pt}
 
-  \setlength{\parskip}{6pt plus 2pt minus 1pt}
+  % \setlength{\parskip}{6pt plus 2pt minus 1pt}
   
   \pagestyle{plain}  
   
@@ -96,7 +96,7 @@ $endif$
   \date{$date$}
   $endif$
 
-  \setlength\parindent{0pt}
+  \setlength\parindent{15pt}
   
   \begin{document}
   
