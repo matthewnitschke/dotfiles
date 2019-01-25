@@ -48,7 +48,8 @@ while getopts ":wt:" opt; do
 done
 
 outputName="${src_filename%.*}.pdf"
-pdocArgs="$src_filename -o $outputName --from markdown $template --filter $SCRIPT_DIR/filters/plantuml.py --data-dir=$SCRIPT_DIR"
+# pdocArgs="$src_filename -o $outputName --from markdown $template --filter $SCRIPT_DIR/filters/plantuml.py --data-dir=$SCRIPT_DIR"
+pdocArgs="$src_filename -o $outputName --from markdown $template --data-dir=$SCRIPT_DIR"
 
 # run the arguments
 pandoc $pdocArgs
