@@ -36,7 +36,7 @@ exec('git branch', async (error, stdout, stderr) => {
     }])
 
     if (confirmPrompt.confirm) {
-        exec(`git branch -d ${answers.branch}`, (error, stdout, stderr) => {
+        exec(`git branch -d "${answers.branch}"`, (error, stdout, stderr) => {
             if (!stderr) {
                 return
             }
@@ -50,7 +50,7 @@ exec('git branch', async (error, stdout, stderr) => {
                     default: false
                 }]).then(forceDeletePrompt => {
                     if (forceDeletePrompt.forceDelete) {
-                        exec(`git branch -D ${answers.branch}`)
+                        exec(`git branch -D "${answers.branch}"`)
                     }
                 })
             } else {
