@@ -18,6 +18,7 @@ this document holds tools that I find helpful. Used kind of like an archive
 | ---------- | ----------------------------------------------------- | ------------------------------------------------ |
 | Robo 3T    | gui for mongodb server                                | [link](https://robomongo.org/)                   |
 | Pretzel    | taskbar tool for hotkeys                              | [link](https://www.amie-chen.com/pretzel/)       |
+| Typora     | elegant markdown editor                               | [link](https://typora.io/)                       | 
 
 ## VSCode Extensions
 VS code specific extensions I use
