@@ -18,7 +18,8 @@ this document holds tools that I find helpful. Used kind of like an archive
 | ---------- | ----------------------------------------------------- | ------------------------------------------------ |
 | Robo 3T    | gui for mongodb server                                | [link](https://robomongo.org/)                   |
 | Pretzel    | taskbar tool for hotkeys                              | [link](https://www.amie-chen.com/pretzel/)       |
-| Typora     | elegant markdown editor                               | [link](https://typora.io/)                       | 
+| Typora     | elegant markdown editor                               | [link](https://typora.io/)                       |
+| Etcher     | best cross platform os flashing tool                  | [link](https://www.balena.io/etcher/)            | 
 
 ## VSCode Extensions
 VS code specific extensions I use
