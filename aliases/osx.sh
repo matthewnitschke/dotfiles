@@ -5,3 +5,7 @@ alias sp:rap="spotify play uri spotify:user:1242045734:playlist:3XMO2yBkB9YHVRM2
 alias sp:alt="spotify play uri spotify:user:1242045734:playlist:0UHS0SucJrcymLmqzCzTJd"
 alias sp:tech="spotify play uri spotify:user:1242045734:playlist:2XjuySZCdqT6PnBchVgwd8"
 alias sp:jazz="spotify play uri spotify:user:1242045734:playlist:7N2ToGpwgpx5bGnu8xCvgE"
+
+function typora() {
+	open $1 -a 'Typora'
+}
