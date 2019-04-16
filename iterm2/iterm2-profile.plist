@@ -52,11 +52,11 @@
   "Use Bright Bold" : true,
   "Show Mark Indicators" : false,
   "Ansi 10 Color" : {
-    "Red Component" : 1,
+    "Red Component" : 0.34901960784313724,
     "Color Space" : "sRGB",
-    "Blue Component" : 0.40392156862745099,
+    "Blue Component" : 0.55294117647058827,
     "Alpha Component" : 1,
-    "Green Component" : 0.42745098039215684
+    "Green Component" : 0.96470588235294119
   },
   "Ambiguous Double Width" : false,
   "Jobs to Ignore" : [
@@ -419,9 +419,11 @@
     }
   ],
   "Ansi 1 Color" : {
-    "Green Component" : 0.98039215686274506,
-    "Blue Component" : 0.4823529411764706,
-    "Red Component" : 0.31372549019607843
+    "Red Component" : 1,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.40392156862745099,
+    "Alpha Component" : 1,
+    "Green Component" : 0.42745098039215684
   },
   "Use Non-ASCII Font" : false,
   "Ansi 6 Color" : {
