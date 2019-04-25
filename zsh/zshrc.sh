@@ -14,3 +14,4 @@ fi
 export PATH="$PATH:/Library/TeX/texbin"
 
 export EDITOR="vim"
+export NOTES_DIRECTORY="~/Notes"
