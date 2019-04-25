@@ -12,6 +12,7 @@ this document holds tools that I find helpful. Used kind of like an archive
 | `bat`      | replacement for `cat` that offers syntax highlighting | [link](https://github.com/sharkdp/bat)           |
 | `fzf`      | good fuzzy finder (make sure to install keybindings `$(brew --prefix)/opt/fzf/install`) | [link](https://github.com/junegunn/fzf) |
 | `tldr`     | simplified man pages (better to install through brew than npm) | [link](https://github.com/tldr-pages/tldr) |
+| `notes` | simple cli note taking | [link](https://github.com/pimterry/notes) |
 
 ## GUI tools
 | Name       | Description                                           | Link                                             |
