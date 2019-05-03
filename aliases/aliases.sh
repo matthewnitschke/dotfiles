@@ -15,6 +15,22 @@ alias gl="cd ~/Programming/GitLab"
 
 alias pdoc="~/scripts/pandoc/pandoc.sh"
 
+git-fzf-switch-branch() {
+  local branches branch
+  branches=$(git --no-pager branch -vv) &&
+  branch=$(echo "$branches" | fzf +m -i --layout=reverse) &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+
+git-fzf-switch-branch-remote() {
+  local branches branch
+  branches=$(git branch --all | grep -v HEAD) &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m -i --layout=reverse) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+
 if [[ $OSTYPE == darwin* ]]; then
     source $SCRIPT_DIR/osx.sh
 else
