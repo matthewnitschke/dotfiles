@@ -5,9 +5,10 @@
     m = checkout master
 
     # tools
-    sb = !sh -c \"node ~/scripts/git/tools/switchBranch.js\"
-    sb2 = !sh - \"git branch | fzf | xargs git checkout\"
-	delete-branch = !sh -c \"node ~/scripts/git/tools/deleteBranch.js\"
+    #sb = !sh -c \"node ~/scripts/git/tools/switchBranch.js\"
+	sb = !sh -c \"git-fzf-switch-branch\"
+	sbr = !sh -c \"git-fzf-switch-branch-remote\"
+   	delete-branch = !sh -c \"node ~/scripts/git/tools/deleteBranch.js\"
     
     # common processes
     poh = push origin HEAD

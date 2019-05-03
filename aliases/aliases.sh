@@ -15,14 +15,14 @@ alias gl="cd ~/Programming/GitLab"
 
 alias pdoc="~/scripts/pandoc/pandoc.sh"
 
-git-fzf-switch-branch() {
+sb() {
   local branches branch
   branches=$(git --no-pager branch -vv) &&
   branch=$(echo "$branches" | fzf +m -i --layout=reverse) &&
   git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
-git-fzf-switch-branch-remote() {
+sbr() {
   local branches branch
   branches=$(git branch --all | grep -v HEAD) &&
   branch=$(echo "$branches" |
