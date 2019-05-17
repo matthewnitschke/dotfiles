@@ -6,8 +6,8 @@ Configuration management for my unix based system
 Start off by running `make pre-install`
 
 ## zsh
-First run `make zsh:oh-my-zsh`
-Then run `make zsh`
+* First run `make oh-my-zsh`
+* Then run `make zsh`
 
 Finall add the following in `~/.zshrc`
 ```

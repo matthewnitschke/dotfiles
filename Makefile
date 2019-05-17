@@ -3,6 +3,9 @@
 pre-install:
 	./system-dependencies/install.sh
 
+oh-my-zsh:
+	./zsh/install-oh-my-zsh.sh
+
 zsh:
 	./zsh/install.sh
 
