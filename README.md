@@ -3,10 +3,13 @@
 Configuration management for my unix based system
 
 # Installation
-Add whichever of the following you want and then run `make init`
+Start off by running `make pre-install`
 
 ## zsh
-add the following in `~/.zshrc`
+First run `make zsh:oh-my-zsh`
+Then run `make zsh`
+
+Finall add the following in `~/.zshrc`
 ```
 source ~/scripts/zsh/zshrc.sh
 ```
@@ -24,12 +27,16 @@ source ~/scripts/zsh/lazyload-node.sh
 ```
 
 ## vim
+Run `make vim`
+
 then add the following in `~/.vimrc`
 ```
 source ~/scripts/vim/vimrc.vim
 ```
 
 ## git
+Run `make git`
+
 add the following in `~/.gitconfig`
 ```
 [include]
@@ -37,12 +44,12 @@ add the following in `~/.gitconfig`
 ```
 
 ## iterm2
+Run `make iterm`
+
 set `Vladimir` as default profile in `Preferences -> Profiles -> Other Actions -> Set Default Profile`
 
 ## pandoc
-pandoc has its own installation, to use run:
-```
-make init-pandoc
-```
+Run `make pandoc`
+
 this will run some brew installations, then refer to `pdoc -h` for documentation on how to use
 
