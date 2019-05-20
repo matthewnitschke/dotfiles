@@ -1,18 +1,22 @@
 .DEFAULT_GOAL := init
 
-init:
-	# install any dependencies for the following commands
+pre-install:
 	./system-dependencies/install.sh
 
-	./zsh/install.sh # install zsh plugins
+oh-my-zsh:
+	./zsh/install-oh-my-zsh.sh
+
+zsh:
+	./zsh/install.sh
+
+vim:
 	./vim/install.sh
 
-	./iterm2/install.sh # handle iterm2 installation
-	./terminator/install.sh # setup the config link for terminator
+iterm:
+	./iterm2/install.sh
 
-	# install node dependencies
-	(cd git/tools; npm install) # install git tools dependencies
-	(cd custom-apps/checkoff; npm install) # install checkoff dependencies
+node-tools:
+	(cd git/tools; npm install)
 
-init-pandoc:
+pandoc:
 	./pandoc/install.sh
