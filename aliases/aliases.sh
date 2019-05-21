@@ -17,8 +17,8 @@ alias pdoc="~/scripts/pandoc/pandoc.sh"
 
 sb() {
   local branches branch
-  branches=$(git --no-pager branch -vv) &&
-  branch=$(echo "$branches" | fzf +m -i --layout=reverse) &&
+  branches=$(git --no-pager branch) &&
+  branch=$(echo "$branches" | fzf +m -i) &&
   git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
@@ -26,7 +26,7 @@ sbr() {
   local branches branch
   branches=$(git branch --all | grep -v HEAD) &&
   branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m -i --layout=reverse) &&
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m -i) &&
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
