@@ -4,6 +4,7 @@ alias sudo='sudo ' # fixes the issue of running aliases with sudo
 
 alias copy="clipcopy"
 alias desk="cd ~/Desktop"
+alias mic="micro"
 
 # cd's to the root of the git repo
 alias gr='cd $(git rev-parse --show-toplevel)'
