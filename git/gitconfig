@@ -5,8 +5,7 @@
     m = checkout master
 
     # tools
-    #sb = !sh -c \"node ~/scripts/git/tools/switchBranch.js\"
-	sb = !sh -c \"git-fzf-switch-branch\"
+    sb = !sh -c \"node ~/scripts/git/tools/switchBranch.js\"
 	sbr = !sh -c \"git-fzf-switch-branch-remote\"
    	delete-branch = !sh -c \"node ~/scripts/git/tools/deleteBranch.js\"
     
