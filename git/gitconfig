@@ -3,6 +3,7 @@
     b = branch
     s = status --short
     m = checkout master
+    l = checkout - # switch to last branch
 
     # tools
     sb = !sh -c \"node ~/scripts/git/tools/switchBranch.js\"
