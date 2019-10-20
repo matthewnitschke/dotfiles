@@ -10,7 +10,7 @@
     
     # common processes
     poh = push origin HEAD
-	mm = !sh -c \"git m && git pull && git checkout - && git merge master\" # merges the master branch
+	mm = merge master
 
 # I dont like the pager when displaying branches, if you have that many branches it should be time to rethink your
 # development processes. Also, if you want a pager just do "git branch | less", its that easy
