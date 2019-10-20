@@ -3,11 +3,9 @@
     b = branch
     s = status --short
     m = checkout master
+    l = checkout - # checkout the last branch
 
     # tools
-    #sb = !sh -c \"node ~/scripts/git/tools/switchBranch.js\"
-	sb = !sh -c \"git-fzf-switch-branch\"
-	sbr = !sh -c \"git-fzf-switch-branch-remote\"
    	delete-branch = !sh -c \"node ~/scripts/git/tools/deleteBranch.js\"
     
     # common processes
