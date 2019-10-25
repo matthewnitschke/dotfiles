@@ -9,8 +9,5 @@ if [[ $OSTYPE == darwin* ]]; then
     export PATH="/usr/local/bin:${PATH}"
 fi
 
-# zsh doesn't find pdflatex for some reason
-# https://superuser.com/questions/982647/cannot-find-pdflatex-after-upgrade-to-mac-os-x-10-11-el-capitan
-export PATH="$PATH:/Library/TeX/texbin"
 
 export EDITOR="micro"
