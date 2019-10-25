@@ -17,6 +17,3 @@ iterm:
 
 node-tools:
 	(cd git/tools; npm install)
-
-pandoc:
-	./pandoc/install.sh
