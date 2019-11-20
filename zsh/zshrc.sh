@@ -9,5 +9,6 @@ if [[ $OSTYPE == darwin* ]]; then
     export PATH="/usr/local/bin:${PATH}"
 fi
 
+source $SCRIPT_DIR/aliases.sh
 
 export EDITOR="micro"
