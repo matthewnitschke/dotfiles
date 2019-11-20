@@ -2,19 +2,13 @@ SCRIPT_DIR=$(dirname "$0") # get the base directory for this file
 
 alias sudo='sudo ' # fixes the issue of running aliases with sudo
 
-alias copy="clipcopy"
 alias desk="cd ~/Desktop"
 alias mic="micro"
-
-# cd's to the root of the git repo
-alias gr='cd $(git rev-parse --show-toplevel)'
-
-alias checkoff="node ~/scripts/custom-apps/checkoff/checkoff.js"
+alias lg="lazygit"
+alias p="pet exec"
 
 alias gh="cd ~/Programming/GitHub"
 alias gl="cd ~/Programming/GitLab"
-
-alias pdoc="~/scripts/pandoc/pandoc.sh"
 
 sb() {
   local branches branch
@@ -30,7 +24,6 @@ sbr() {
            fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m -i) &&
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
-
 
 if [[ $OSTYPE == darwin* ]]; then
     source $SCRIPT_DIR/osx.sh
