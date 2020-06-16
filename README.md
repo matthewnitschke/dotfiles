@@ -12,18 +12,9 @@ Start off by running `make pre-install`
 Finall add the following in `~/.zshrc`
 ```
 source ~/scripts/zsh/zshrc.sh
-```
-### zsh configuration
-you can pick and choose which of the following to use
-```shell
+
 # sets the zsh theme to the custom one contained in this repo
 ZSH_THEME="vladimir"
-
-# include the shared aliases, [Note: Must be after 'source $ZSH/oh-my-zsh.sh' to work]
-source ~/scripts/aliases/aliases.sh
-
-# lazyload in node/nvm to speed up terminal boot times
-source ~/scripts/zsh/lazyload-node.sh
 ```
 
 ## vim
@@ -35,8 +26,6 @@ source ~/scripts/vim/vimrc.vim
 ```
 
 ## git
-Run `make git`
-
 add the following in `~/.gitconfig`
 ```
 [include]
@@ -48,8 +37,7 @@ Run `make iterm`
 
 set `Vladimir` as default profile in `Preferences -> Profiles -> Other Actions -> Set Default Profile`
 
-## pandoc
-Run `make pandoc`
+## terminator
+Run `./terminator/install.sh`
 
-this will run some brew installations, then refer to `pdoc -h` for documentation on how to use
-
+Everything will magically work. I love terminator

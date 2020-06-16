@@ -6,6 +6,7 @@ pre-install:
 oh-my-zsh:
 	./zsh/install-oh-my-zsh.sh
 
+.PHONY: zsh
 zsh:
 	./zsh/install.sh
 
