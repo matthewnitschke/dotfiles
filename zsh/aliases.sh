@@ -1,5 +1,3 @@
-SCRIPT_DIR=$(dirname "$0") # get the base directory for this file
-
 alias sudo='sudo ' # fixes the issue of running aliases with sudo
 
 alias desk="cd ~/Desktop"

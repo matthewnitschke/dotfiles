@@ -1,7 +1,6 @@
-SCRIPT_DIR=$(dirname "$0") # get the base directory for this file
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-# install oh-my-zsh with sh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+SCRIPT_DIR=$(dirname "$0") # get the base directory for this file
 
 # install oh-my-zsh plugins
 rm -rf $SCRIPT_DIR/plugins/zsh-autosuggestions

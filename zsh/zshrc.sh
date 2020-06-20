@@ -9,8 +9,7 @@ if [[ $OSTYPE == darwin* ]]; then
     export PATH="/usr/local/bin:${PATH}"
 fi
 
+# add yarn global to the path
 export PATH="$(yarn global bin):$PATH"
-
-source $SCRIPT_DIR/aliases.sh
 
 export EDITOR="micro"
