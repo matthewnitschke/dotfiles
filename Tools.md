@@ -30,6 +30,5 @@ VS code specific extensions I use
 | ----------------------- | ---------------------------------- |
 | `Path Intellisense`     | autocompletes filenames            |
 | `Dracula Official`      | the theme I like and use           |
-| `Atom One Dark`         | the alternate theme I like and use |
 | `Useful React Snippets` | some helpful react snippets        |
 

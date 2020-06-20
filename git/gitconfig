@@ -3,11 +3,10 @@
     b = branch
     s = status --short
     m = checkout master
-    l = checkout - # switch to last branch
     dh = diff HEAD
-    root = !sh -c \"cd $(git rev-parse --show-toplevel)\"
     
     # common processes
+    l = checkout - # switch to last branch
     poh = push origin HEAD
 	mm = merge master
 

@@ -1,6 +1,9 @@
 #!/bin/bash
 
-SCRIPT_DIR=$(dirname "$0") # get the base directory for this file
+pushd . > /dev/null
+cd $(dirname "$0")
+FULL_PATH=$(pwd)
+popd > /dev/null
 
 # iterm2 is osx only, ensure we are on an osx machine
 if [[ $OSTYPE == darwin* ]]; then
@@ -8,6 +11,6 @@ if [[ $OSTYPE == darwin* ]]; then
     defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
     # Specify the preferences directory
-    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$SCRIPT_DIR"
+    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$FULL_PATH"
 fi
 
