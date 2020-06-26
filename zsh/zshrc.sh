@@ -9,7 +9,9 @@ if [[ $OSTYPE == darwin* ]]; then
     export PATH="/usr/local/bin:${PATH}"
 fi
 
-# add yarn global to the path
-export PATH="$(yarn global bin):$PATH"
+if [[ -x "$(command -v yarn)" ]]; then
+    # add yarn global to the path
+    export PATH="$(yarn global bin):$PATH"
+fi
 
 export EDITOR="micro"
