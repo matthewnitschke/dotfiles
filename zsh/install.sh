@@ -15,7 +15,7 @@ git clone https://github.com/paulirish/git-open.git $SCRIPT_DIR/plugins/git-open
 # install fake plugins (these are ones that already are installed within oh-my-zsh)
 printf "Dummy file so that ~/dotfiles/zsh/install.sh thinks the filename is a plugin" > $SCRIPT_DIR/plugins/git
 
-SHOULD_COPY_TEMPLATE=$(cat $HOME/.zshrc | grep "# Installed by matthewnitschke/dotfiles/zsh/install.sh")
+SHOULD_COPY_TEMPLATE=$(cat $HOME/.zshrc | grep "zsh/zshrc.sh")
 if [ ! -n "$SHOULD_COPY_TEMPLATE" ]; then
     printf "Installing ~/.zshrc template\n"
     PLUGIN_LIST=$(ls ./plugins)
