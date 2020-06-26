@@ -1,6 +1,19 @@
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+function __join_by { local d=$1; shift; echo -n "$1"; shift; printf "%s" "${@/#/$d}"; }
 
 SCRIPT_DIR=$(dirname "$0") # get the base directory for this file
+
+SHOULD_COPY_TEMPLATE=$(cat ~/.zshrc | grep -q "# Installed by matthewnitschke/dotfiles/zsh/install.sh")
+if [ ! -n "$SHOULD_COPY_TEMPLATE" ]; then
+    printf "Installing ~/.zshrc template\n"
+    PLUGIN_LIST=$(ls ./plugins)
+    PLUGINS=$(__join_by '\ \n    ' $PLUGIN_LIST)
+
+    cat zshrc.template.sh | sed "s/{{plugins}}/git\ \n    $PLUGINS/g" > ~/.zshrc
+else 
+    printf "Template already installed, not overriding"
+fi
 
 # install oh-my-zsh plugins
 rm -rf $SCRIPT_DIR/plugins/zsh-autosuggestions
