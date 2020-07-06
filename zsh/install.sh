@@ -25,3 +25,8 @@ if [ ! -n "$SHOULD_COPY_TEMPLATE" ]; then
 else 
     printf "Template already installed, not overriding\n"
 fi
+
+# if we are on OSX, hide the "last login" text
+if [[ $OSTYPE == darwin* ]]; then
+    touch $HOME/.hushlogin
+fi
