@@ -856,7 +856,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{398, 710}</string>
+		<string>{372, 797}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -865,7 +865,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>52FCC685-6D18-4783-803E-B6BDAF64EC4B</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>27</integer>
+	<integer>31</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>587529730.90358996</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -1661,9 +1661,11 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/mnitschke/scripts/iterm2</string>
+	<string>/Users/mnitschke/dotfiles/iterm2</string>
 	<key>Print In Black And White</key>
 	<true/>
+	<key>PromptOnQuit</key>
+	<false/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -1673,7 +1675,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-06-20T20:56:22Z</date>
+	<date>2020-07-06T19:06:59Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
