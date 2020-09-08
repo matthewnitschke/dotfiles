@@ -7,8 +7,6 @@ alias mic="micro"
 alias lg="lazygit"
 alias p="pet exec"
 
-alias gh="cd ~/Programming/GitHub"
-alias gl="cd ~/Programming/GitLab"
 
 sb() {
   local branches branch
@@ -27,6 +25,15 @@ sbr() {
 
 typora() {
 	open $1 -a 'Typora'
+}
+
+stripcolor() {
+  sed $'s,\x1b\\[[0-9;]*[a-zA-Z],,g'
+}
+
+gcam() {
+  git add ./
+  git commit -m $1
 }
 
 # spotify aliases (uses the oh-my-zsh spotify app thing contained in the osx package)
