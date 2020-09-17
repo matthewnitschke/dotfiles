@@ -1,4 +1,4 @@
-# alias sudo='sudo ' # fixes the issue of running aliases with sudo
+alias sudo='sudo ' # fixes the issue of running aliases with sudo
 
 alias desk="cd ~/Desktop"
 alias mic="micro"
