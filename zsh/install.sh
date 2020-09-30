@@ -10,7 +10,6 @@ rm -rf $SCRIPT_DIR/plugins
 # install real plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions $SCRIPT_DIR/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $SCRIPT_DIR/plugins/zsh-syntax-highlighting
-git clone https://github.com/paulirish/git-open.git $SCRIPT_DIR/plugins/git-open
 
 # install fake plugins (these are ones that already are installed within oh-my-zsh)
 printf "Dummy file so that ~/dotfiles/zsh/install.sh thinks the filename is a plugin" > $SCRIPT_DIR/plugins/git
