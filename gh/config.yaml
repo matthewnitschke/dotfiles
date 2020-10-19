@@ -1,0 +1,3 @@
+aliases:
+  c: pr create --web
+  v: pr view --web
