@@ -4,7 +4,7 @@
     s = status --short
     m = checkout master
     dh = diff HEAD
-    ac = "!f() { git add -A && git commit -m \"${1}\"; }; f"
+    c = "!f() { git add -A && git commit -m \"${1}\"; }; f"
 
     
     # common processes
