@@ -4,7 +4,12 @@
     s = status --short
     m = checkout master
     dh = diff HEAD
+
+    # adds and commits all files
     c = "!f() { git add -A && git commit -m \"${1}\"; }; f"
+
+	# adds, commits, and pushes all files
+    cp = "!f() { git add -A && git commit -m \"${1}\" && git poh; }; f"
 
     
     # common processes
