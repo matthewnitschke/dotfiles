@@ -9,7 +9,10 @@
     c = "!f() { git add -A && git commit -m \"${1}\"; }; f"
 
 	# adds, commits, and pushes all files
-    cp = "!f() { git add -A && git commit -m \"${1}\" && git poh; }; f"
+    cp = "!f() { git c \"${1}\" && git poh; }; f"
+
+	# adds, commits, pushes, and opens in github
+    cpo = "!f() { git c \"${1}\" && git poh && gh o; }; f"
 
     
     # common processes
