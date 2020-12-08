@@ -6,6 +6,9 @@ alias lg="lazygit"
 alias p="pet exec"
 alias c="code ./"
 
+# cleans the local maven cache
+alias maven-local-clean="mvn dependency:purge-local-repository -DactTransitively=false -DreResolve=false --fail-at-end"
+
 sb() {
   local branches branch
   branches=$(git --no-pager branch) &&
