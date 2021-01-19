@@ -9,6 +9,14 @@ alias c="code ./"
 # cleans the local maven cache
 alias maven-local-clean="mvn dependency:purge-local-repository -DactTransitively=false -DreResolve=false --fail-at-end"
 
+# tmp-note opens a temporary file in /var/tmp in vscode.
+# Used for quick notes that will be deleted after use
+tmp-note() {
+  FILE=/var/tmp/tmp-note.txt
+  echo "" > $FILE # clear the contents of the file
+  code $FILE # open in vscode
+}
+
 sb() {
   local branches branch
   branches=$(git --no-pager branch) &&
