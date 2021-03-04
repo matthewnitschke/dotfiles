@@ -1,5 +1,8 @@
 GITCONFIG_PATH="$HOME/.gitconfig"
 
+# Ensure .gitconfig exists
+touch $GITCONFIG_PATH
+
 # Verify we arent already installed
 if grep -q "include" "$GITCONFIG_PATH"; then
     echo "[include] already exists within ~/.gitconfig, unable to add script"
