@@ -20,8 +20,8 @@ if [ ! -n "$SHOULD_COPY_TEMPLATE" ]; then
     PLUGIN_LIST=$(ls $SCRIPT_DIR/plugins)
     PLUGINS=$(__join_by '\ \n    ' $PLUGIN_LIST)
 
-    # cat $SCRIPT_DIR/zshrc.template.sh | sed "s/{{plugins}}/$PLUGINS/g" > ~/.zshrc
-    cat $SCRIPT_DIR/zshrc.template.sh > ~/.zshrc
+    # Confirmed to work in ubuntu, might struggle in osx
+    cat $SCRIPT_DIR/zshrc.template.sh | sed "s/{{plugins}}/$PLUGINS/g" > ~/.zshrc
 else 
     printf "Template already installed, not overriding\n"
 fi
