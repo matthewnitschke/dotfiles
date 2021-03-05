@@ -5,9 +5,6 @@
     m = checkout master
     dh = diff HEAD
 
-    # creates a new branch
-    cb = checkout -b
-
     # adds and commits all files
     c = "!f() { git add -A && git commit -m \"${1}\"; }; f"
 
@@ -17,11 +14,11 @@
 	# adds, commits, pushes, and opens in github
     cpo = "!f() { git c \"${1}\" && git poh && gh o; }; f"
 
-    
     # common processes
     l = checkout - # switch to last branch
     poh = push origin HEAD
 	mm = merge master
+    cb = checkout -b # creates and checkout a new branch
 
 # I dont like the pager when displaying branches, if you have that many branches it should be time to rethink your
 # development processes. Also, if you want a pager just do "git branch | less", its that easy
