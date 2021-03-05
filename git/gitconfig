@@ -5,6 +5,9 @@
     m = checkout master
     dh = diff HEAD
 
+    # creates a new branch
+    cb = checkout -b
+
     # adds and commits all files
     c = "!f() { git add -A && git commit -m \"${1}\"; }; f"
 
