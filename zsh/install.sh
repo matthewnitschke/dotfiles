@@ -17,11 +17,15 @@ printf "Dummy file so that ~/dotfiles/zsh/install.sh thinks the filename is a pl
 SHOULD_COPY_TEMPLATE=$(cat $HOME/.zshrc | grep "zsh/zshrc.sh")
 if [ ! -n "$SHOULD_COPY_TEMPLATE" ]; then
     printf "Installing ~/.zshrc template\n"
-    PLUGIN_LIST=$(ls $SCRIPT_DIR/plugins)
-    PLUGINS=$(__join_by '\ \n    ' $PLUGIN_LIST)
 
-    # Confirmed to work in ubuntu, might struggle in osx
-    cat $SCRIPT_DIR/zshrc.template.sh | sed "s/{{plugins}}/$PLUGINS/g" > ~/.zshrc
+    cat $SCRIPT_DIR/zshrc.template.sh > ~/.zshrc
+    if [[ $OSTYPE == darwin* ]]; then
+        echo "Installing plugins has some issues on MacOS. You must install the plugins manually"
+    else
+        PLUGIN_LIST=$(ls $SCRIPT_DIR/plugins)
+        PLUGINS=$(__join_by '\ \n    ' $PLUGIN_LIST)
+        sed "s/{{plugins}}/$PLUGINS/g" ~/.zshrc
+    fi
 else 
     printf "Template already installed, not overriding\n"
 fi
