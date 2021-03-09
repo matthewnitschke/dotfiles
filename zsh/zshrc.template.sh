@@ -1,6 +1,6 @@
-# Installed by matthewnitschke/dotfiles/zsh/install.sh
+# Installed by $home/dotfiles/zsh/install.sh
 
-export ZSH="/home/mnitschke/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 source ~/dotfiles/zsh/zshrc.sh
 
