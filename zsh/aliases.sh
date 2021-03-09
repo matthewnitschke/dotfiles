@@ -27,3 +27,7 @@ sb() {
 stripcolor() {
   sed $'s,\x1b\\[[0-9;]*[a-zA-Z],,g'
 }
+
+alias docker-nuke-containers="docker kill $(docker ps -q) && docker rm $(docker ps -a -q)"
+alias docker-nuke-images="docker rmi $(docker images -q)"
+alias docker-nuke="docker-nuke-containers && docker-nuke-images"
