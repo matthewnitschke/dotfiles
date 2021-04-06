@@ -113,7 +113,7 @@ items=$(echo $parsedJson | jq -c --raw-output '
 # Pipe formatted query results to fzf for selection
 selectedItem=$(
   echo "$items" \
-  | fzf -i --ansi -d '<del>' --with-nth 2 --preview-window=down:7:wrap --preview "$SCRIPT_DIR/prs-detail.sh {1}"
+  | fzf -i --ansi -d '<del>' --with-nth 2 --preview-window=right:30%:wrap --preview "$SCRIPT_DIR/prs-detail.sh {1}"
 )
 
 if [ "$selectedItem" != "" ]; then
