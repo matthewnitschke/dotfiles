@@ -3,11 +3,7 @@ alias sudo='sudo ' # fixes the issue of running aliases with sudo
 alias desk="cd ~/Desktop"
 alias mic="micro"
 alias lg="lazygit"
-alias p="pet exec"
 alias c="code ./"
-
-# cleans the local maven cache
-alias maven-local-clean="mvn dependency:purge-local-repository -DactTransitively=false -DreResolve=false --fail-at-end"
 
 # tmp-note opens a temporary file in /var/tmp in vscode.
 # Used for quick notes that will be deleted after use

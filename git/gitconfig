@@ -11,9 +11,6 @@
 	# adds, commits, and pushes all files
     cp = "!f() { git c \"${1}\" && git poh; }; f"
 
-	# adds, commits, pushes, and opens in github
-    cpo = "!f() { git c \"${1}\" && git poh && gh o; }; f"
-
     # common processes
     l = checkout - # switch to last branch
     poh = push origin HEAD

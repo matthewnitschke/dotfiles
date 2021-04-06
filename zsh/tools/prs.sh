@@ -47,8 +47,6 @@ QUERY='query {
     edges {
       node {
         ... on PullRequest {
-          id
-          state
           title
           url
           repository {
