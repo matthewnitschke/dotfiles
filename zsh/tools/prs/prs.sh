@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SCRIPT_DIR=$(dirname "$0") # get the base directory for this file
+
 RED='\033[0;31m'
 NC='\033[0m'
 
@@ -60,6 +62,11 @@ QUERY='query {
               commit {
                 status {
                   state
+                  contexts {
+                    state
+                    context
+                    targetUrl
+                  }
                 }
               }
             }
@@ -79,8 +86,20 @@ json=$(curl --silent \
    -H "Authorization: bearer ${GITHUB_TOKEN}" \
    -X POST -d "{ \"query\": \"$QUERY\"}" https://api.github.com/graphql)
 
+# parsedJson=$(cat $SCRIPT_DIR/.prs-cache.json)
+parsedJson=$(echo $json | jq '
+  [ .data.search.edges[] | {
+    repo: .node.repository.name,
+    owner: .node.repository.owner.login,
+    title: .node.title,
+    state: .node.commits.nodes[0].commit.status.state,
+    checks: .node.commits.nodes[0].commit.status.contexts | sort_by(.context)
+  } ]
+')
+echo $parsedJson > "$SCRIPT_DIR/.prs-cache.json"
+
 # Use jq to parse, display, and colorize the query output 
-items=$(echo $json | jq -c --raw-output '
+items=$(echo $parsedJson | jq -c --raw-output '
   def colors: {
     "green": "\u001b[32m",
     "red": "\u001b[31m",
@@ -88,11 +107,14 @@ items=$(echo $json | jq -c --raw-output '
     "reset": "\u001b[0m",
   };
 
-  .data.search.edges[].node | "\(colors.black)\(.repository.owner.login)/\(.repository.name)\(colors.reset) \(.title) \(if .commits.nodes[0].commit.status.state == "FAILURE" then "\(colors.red)✖\(colors.reset)" else "\(colors.green)✔\(colors.reset)" end)"
+  to_entries | .[] | "\(.key) <del> \(colors.black)\(.value.owner)/\(.value.repo)\(colors.reset) \(.value.title) \(if .value.state == "FAILURE" then "\(colors.red)✖\(colors.reset)" else "\(colors.green)✔\(colors.reset)" end)"
 ')
 
 # Pipe formatted query results to fzf for selection
-selectedItem=$(echo "$items" | fzf -i --ansi)
+selectedItem=$(
+  echo "$items" \
+  | fzf -i --ansi -d '<del>' --with-nth 2 --preview-window=down:7:wrap --preview "$SCRIPT_DIR/prs-detail.sh {1}"
+)
 
 if [ "$selectedItem" != "" ]; then
   # pull the line number that the selection was from
