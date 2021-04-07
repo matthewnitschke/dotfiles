@@ -51,6 +51,7 @@ QUERY='query {
         ... on PullRequest {
           title
           url
+          createdAt
           repository {
             name
             owner {
@@ -81,9 +82,12 @@ json=$(curl --silent \
    -H "Authorization: bearer ${GITHUB_TOKEN}" \
    -X POST -d "{ \"query\": \"$QUERY\"}" https://api.github.com/graphql)
 
+# echo $json > "$SCRIPT_DIR/.prs-cache.json"
+# exit 0
+
 # parsedJson=$(cat $SCRIPT_DIR/.prs-cache.json)
 parsedJson=$(echo $json | jq '
-  [ .data.search.edges[] | {
+  [ .data.search.edges | sort_by(.node.createdAt) | .[] | {
     repo: .node.repository.name,
     owner: .node.repository.owner.login,
     title: .node.title,
