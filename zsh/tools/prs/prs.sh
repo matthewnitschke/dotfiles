@@ -62,11 +62,6 @@ QUERY='query {
               commit {
                 status {
                   state
-                  contexts {
-                    state
-                    context
-                    targetUrl
-                  }
                 }
               }
             }
@@ -93,7 +88,6 @@ parsedJson=$(echo $json | jq '
     owner: .node.repository.owner.login,
     title: .node.title,
     state: .node.commits.nodes[0].commit.status.state,
-    checks: .node.commits.nodes[0].commit.status.contexts | sort_by(.context)
   } ]
 ')
 echo $parsedJson > "$SCRIPT_DIR/.prs-cache.json"
@@ -107,13 +101,13 @@ items=$(echo $parsedJson | jq -c --raw-output '
     "reset": "\u001b[0m",
   };
 
-  to_entries | .[] | "\(.key) <del> \(colors.black)\(.value.owner)/\(.value.repo)\(colors.reset) \(.value.title) \(if .value.state == "FAILURE" then "\(colors.red)✖\(colors.reset)" else "\(colors.green)✔\(colors.reset)" end)"
+  .[] | "\(colors.black)\(.owner)/\(.repo)\(colors.reset) \(.title) \(if .state == "FAILURE" then "\(colors.red)✖\(colors.reset)" else "\(colors.green)✔\(colors.reset)" end)"
 ')
 
 # Pipe formatted query results to fzf for selection
 selectedItem=$(
   echo "$items" \
-  | fzf -i --ansi -d '<del>' --with-nth 2 --preview-window=right:30%:wrap --preview "$SCRIPT_DIR/prs-detail.sh {1}"
+  | fzf -i --ansi
 )
 
 if [ "$selectedItem" != "" ]; then
