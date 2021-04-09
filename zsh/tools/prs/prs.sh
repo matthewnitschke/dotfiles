@@ -92,6 +92,7 @@ parsedJson=$(echo $json | jq '
     owner: .node.repository.owner.login,
     title: .node.title,
     state: .node.commits.nodes[0].commit.status.state,
+    url: .node.url
   } ]
 ')
 echo $parsedJson > "$SCRIPT_DIR/.prs-cache.json"
@@ -105,21 +106,19 @@ items=$(echo $parsedJson | jq -c --raw-output '
     "reset": "\u001b[0m",
   };
 
-  .[] | "\(colors.black)\(.owner)/\(.repo)\(colors.reset) \(.title) \(if .state == "FAILURE" then "\(colors.red)✖\(colors.reset)" else "\(colors.green)✔\(colors.reset)" end)"
+  .[] | "\(.url)*\(colors.black)\(.owner)/\(.repo)\(colors.reset) \(.title) \(if .state == "FAILURE" then "\(colors.red)✖\(colors.reset)" else "\(colors.green)✔\(colors.reset)" end)"
 ')
 
 # Pipe formatted query results to fzf for selection
 selectedItem=$(
   echo "$items" \
-  | fzf -i --ansi
+  | fzf -i --ansi --delimiter '*' --with-nth 2
 )
 
-if [ "$selectedItem" != "" ]; then
-  # pull the line number that the selection was from
-  lineNumber=$(echo "$items" | __stripcolor | grep -n "$selectedItem" | cut -f1 -d:)
 
+if [ "$selectedItem" != "" ]; then
   # using the orinigal data, get the url for the query response
-  url=$(echo $json | jq --raw-output --argjson lineNumber "$lineNumber" '.data.search.edges[$lineNumber-1].node.url')
+  url=$(echo "$selectedItem" | cut -d '*' -f1)
 
   # OSX only, open the url
   open "$url"
