@@ -115,7 +115,6 @@ selectedItem=$(
   | fzf -i --ansi --delimiter '*' --with-nth 2
 )
 
-
 if [ "$selectedItem" != "" ]; then
   # using the orinigal data, get the url for the query response
   url=$(echo "$selectedItem" | cut -d '*' -f1)
