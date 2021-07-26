@@ -3,18 +3,18 @@
     b = branch
     s = status --short
     m = "!f() { git checkout $(git config init.defaultBranch); }; f"
-    dh = diff HEAD
-
+    dh = diff HEAD  
+    
     # adds and commits all files
-    c = "!f() { git add -A && git commit -m \"${1}\"; }; f"
+    c = "!f() { git add -A && git commit -m \"${1}\"; }; f" 
 
-	# adds, commits, and pushes all files
+    # adds, commits, and pushes all files
     cp = "!f() { git c \"${1}\" && git poh; }; f"
 
     # common processes
     l = checkout - # switch to last branch
     poh = push origin HEAD
-	mm = "!f() { git merge $(git config init.defaultBranch); }; f"
+    mm = "!f() { git merge $(git config init.defaultBranch); }; f"
     cb = checkout -b # creates and checkout a new branch
 
 # I dont like the pager when displaying branches, if you have that many branches it should be time to rethink your
