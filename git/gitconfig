@@ -2,7 +2,7 @@
     # short aliases
     b = branch
     s = status --short
-    m = checkout master
+    m = "!f() { git checkout $(git config init.defaultBranch); }; f"
     dh = diff HEAD
 
     # adds and commits all files
@@ -14,7 +14,7 @@
     # common processes
     l = checkout - # switch to last branch
     poh = push origin HEAD
-	mm = merge master
+	mm = "!f() { git merge $(git config init.defaultBranch); }; f"
     cb = checkout -b # creates and checkout a new branch
 
 # I dont like the pager when displaying branches, if you have that many branches it should be time to rethink your

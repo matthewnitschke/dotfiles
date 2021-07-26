@@ -1,4 +1,5 @@
 alias sudo='sudo ' # fixes the issue of running aliases with sudo
+alias xargs='xargs ' # fixes the issue of running aliases with xargs 
 
 alias desk="cd ~/Desktop"
 alias mic="micro"
