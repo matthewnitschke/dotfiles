@@ -17,6 +17,11 @@
     mm = "!f() { git merge $(git config init.defaultBranch); }; f"
     cb = checkout -b # creates and checkout a new branch
 
+[init]
+    # most repos still use master as their default branch name, apply this globally so it works most places
+    # can be applied on a per repo basis via `git config --add init.defaultBranch main`
+    defaultBranch = master
+
 # I dont like the pager when displaying branches, if you have that many branches it should be time to rethink your
 # development processes. Also, if you want a pager just do "git branch | less", its that easy
 [pager]
