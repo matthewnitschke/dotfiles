@@ -14,8 +14,10 @@
     # common processes
     l = checkout - # switch to last branch
     poh = push origin HEAD
-    mm = "!f() { git merge $(git config init.defaultBranch); }; f"
     cb = checkout -b # creates and checkout a new branch
+
+    # merge the master branch, without the editor to pop up
+    mm = "!f() { git merge $(git config init.defaultBranch) --no-edit; }; f"
 
 [init]
     # most repos still use master as their default branch name, apply this globally so it works most places
