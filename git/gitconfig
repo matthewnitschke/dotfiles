@@ -19,6 +19,9 @@
     # merge the master branch, without the editor to pop up
     mm = "!f() { git merge $(git config init.defaultBranch) --no-edit; }; f"
 
+    # pull master branch and merge into current branch
+    u = "!f() { git m && git pull && git l && git mm; }; f"
+
 [init]
     # most repos still use master as their default branch name, apply this globally so it works most places
     # can be applied on a per repo basis via `git config --add init.defaultBranch main`
