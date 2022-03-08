@@ -14,7 +14,9 @@
     # common processes
     l = checkout - # switch to last branch
     poh = push origin HEAD
-    cb = checkout -b # creates and checkout a new branch
+
+    # creates and checkout a new branch
+    cb = "!f() { git b \"${1}\" && git checkout \"${1}\" ;} f"
 
     # merge the master branch, without the editor to pop up
     mm = "!f() { git merge $(git config init.defaultBranch) --no-edit; }; f"
