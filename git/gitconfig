@@ -24,6 +24,8 @@
     # pull master branch and merge into current branch
     u = "!f() { git m && git pull && git l && git mm; }; f"
 
+    squash-branch = "!f() { git reset $(git merge-base master $(git branch --show-current)) && git c \"${1}\"; }; f"
+
 [init]
     # most repos still use master as their default branch name, apply this globally so it works most places
     # can be applied on a per repo basis via `git config --add init.defaultBranch main`
