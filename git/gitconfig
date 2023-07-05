@@ -3,10 +3,10 @@
     b = branch
     s = status --short
     m = "!f() { git checkout $(git config init.defaultBranch); }; f"
-    dh = diff HEAD  
-    
+    dh = diff HEAD
+
     # adds and commits all files
-    c = "!f() { git add -A && git commit -m \"${1}\"; }; f" 
+    c = "!f() { git add -A && git commit -m \"${1}\"; }; f"
 
     # adds, commits, and pushes all files
     cp = "!f() { git c \"${1}\" && git poh; }; f"
@@ -39,3 +39,6 @@
 # prefer ssh over http for github clone
 [url "git@github.com:"]
     insteadOf = "https://github.com/"
+
+[pull]
+	rebase = false
